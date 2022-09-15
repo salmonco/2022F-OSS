@@ -31,3 +31,5 @@
 - ls file.txt file.c : file.txt 파일 찾아지고, file.c 파일 존재하지 않음
 - file.c, file.txt 파일은 각각 어느 장치에 출력되었을까? stderr, stdout
 - rm : 파일 remove
+
+### 2022/09/15
