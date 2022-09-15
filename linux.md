@@ -123,3 +123,51 @@ return a;
 - wc a.out -> stdout에 출력됨
 - wc b.out : 파일 찾을 수 없음 -> stderr에 출력됨
 
+- last : 접속한 기록 보기
+- sleep 3 : 시간(초) 동안 아무것도 안 함
+- sleep 5 ; echo 5 seconds passed : 5초 지난 후에 출력
+
+프로세스의 상태
+- **run** : 실행되고 있는 상태 (fg / bg)  
+- sleep 5 ; echo 5 seconds passed : fg 작업, 프롬프트가 잠시 내려가고 다시 나타남
+- sleep 5 & : bg 작업, job 번호, PID 표시
+- cpu : 프로세서 / 실행되고 있는 작업 : 프로세스
+- **kill** : 죽은 상태
+- **suspend (stopped)**
+
+- ls 명령이 cpu에서 바로 실행된다. (x)  
+=> 실행되기 전에 메모리로 가져와야 함
+
+- jobs
+- fg %2 : fg로 실행, %프로세스번호
+- bg %2 : bg로 실행, %프로세스번호
+
+- \{ sleep 5 ; echo 5 sec ; } & : 명령어 묶어서 bg로 실행
+- ( sleep 5 ; ps ) : 괄호를 치면 shell이 하나 더 만들어짐
+
+- vi hello.c &
+- stdin을 사용하는 프로그램은 bg로 돌릴 수 없다.
+- fg : vi editor로 돌아가기
+
+- vi infile
+- echo 999 > infile : std input
+- a.out < infile
+- a.out < infile > outfile
+- cat outfile
+- ls -l
+- ls -l a.out b.out c.out : a.out 파일 찾아지고, 나머지는 안 찾아짐
+- ls -l a.out b.out c.out 2> /dev/null : a.out 파일 찾아지고, 나머지 stderr에 출력된 것은 redirection 돼서 /dev/null로 이동
+
+- a.out 0< infile 1> stdout.txt 2> stderr.txt : 각각 파일엔 뭐가 써질까?
+- cat hello.c
+- cc hello.c
+
+- set -o noclobber : 덮어씌우기 방지
+- a.out &> all.txt : cannot overwrite existing file
+
+- a.out >> all.txt : 출력이 밑에 계속 추가됨
+- 777
+- cat all.txt
+
+- a.out <<< 88888 : 파일 새로 만들어서 쓸 필요 없음
+
