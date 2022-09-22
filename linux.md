@@ -1,6 +1,6 @@
 ## Linux Command
 
-### 2022/09/08
+### 2022/09/01
 
 - git-scm 들어가서 git 설치
 - git bash 설치하면 MINGW라는 아주 작은 리눅스가 설치됨
@@ -170,4 +170,61 @@ return a;
 - cat all.txt
 
 - a.out <<< 88888 : 파일 새로 만들어서 쓸 필요 없음
+
+### 2022/09/22
+
+- w : 여기에 로그인하고 있는 사람들이 뭐하고 있는지 보기
+- 명령어 ; 명령어 : 이거 끝나고 이거 하기, 꼭 순서가 지켜지진 않음, 앞에 명령이 fail나든 안 나든 상관없이 뒷 명령어 하고 싶을 때
+- 명령어 && 명령어 : 앞 명령어가 true면 뒷 명령어 실행
+- 명령어 || 명령어 : 앞 명령어가 false면 뒷 명령어 실행
+
+- cp ../lab0915/* . : 현재 디렉토리에 복사
+- cd는 shell의 built-in 명령어임
+- man ls more
+- help cd
+- echo $HOME : 어떤 변수의 값을 보여줌
+- HOME=/home/course/foss/oss119/foss_lab/lab0922 : 홈 디렉토리 변경
+- whereis ls
+- whereis cd : 안나옴 -> built-in
+- info ls : 엄청 긴 문서
+- ls -al 해서 나오는 line에서 두 번째 숫자는 디렉토리의 경우 개수, 링크면 링크하고 있는 것의 개수
+
+- echo jisu bong & : bg 실행
+- echo jisu bong \& : &도 출력됨
+
+- echo jisu > name : name이라는 파일에 redirect
+- echo bong >> name : 추가
+- cat name : jisu\nbong
+
+- echo -n jisu > name
+- echo bong >> name
+- cat name : jisubong
+
+- echo " -n" : -n 출력하기
+
+- date : time zone은 그 컴퓨터에 설정되어 있는 시간대를 보여줌
+- du : disk usage
+
+- cd /dev
+- ls -l std*
+- 맨 앞에 글자가 l : soft link or symbolic link
+
+- cd /proc
+- exec ps : 실행하고 자동으로 로그아웃
+
+- file a.out
+- file lsli
+
+
+
+
+
+
+
+
+
+
+
+
+
 
