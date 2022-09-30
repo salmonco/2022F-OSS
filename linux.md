@@ -380,3 +380,83 @@ ls: cannot access 'c.out': No such file or directory
 100  
 200  
 300
+
+### 2022/09/29
+
+bash
+
+- 파일명 file_0000부터 file_9999까지 10000개 파일을 만드는 쉘 스크립트를 짜세요.
+- 0200부터 0299까지 파일을 .c에서 .java로 바꾸세요.
+- 아까 .java로 된 파일을 다시 .c로 바꾸세요.
+
+- A=Jisu : 변수 만들기
+- echo A : A
+- echo $A : Jisu
+
+- HOME=/home/course/foss/oss119/foss_lab/lab0929 : 홈 디렉토리 바꾸기
+- cd : 홈 디렉토리 변수에 있는 곳으로 감
+
+- vi hello.sh
+- i
+```
+#!/bin/bash
+NAME="Jisu"
+echo "Hello $NAME!"
+echo 'Hello $NAME!'
+```
+- esc
+- wq
+- source hello.sh : 파일 실행
+- bash hello.sh : bash 하나 더 띄워짐. sub shell에서 실행
+```
+Hello Jisu!
+Hello $NAME!
+```
+- cat ~oss119/.profile
+- cat ~oss119/.bashrc
+
+- ctrl + D : end of file
+- 파일의 맨 끝에는 EOF가 있음
+- ctrl + D, exit, logout : EOF를 주는 방법
+- bash hello.sh : EOF를 만날 때까지 실행
+
+- chmod 770 hello.sh
+- ./hello.sh
+
+- 어떤 명령을 bg로 실행하고 싶은 경우, 명령어 다음에 뭘 넣을까? : &
+- stdout과 stderr 출력을 동시에 redirection해서 같은 파일에 넣고 싶은 경우 어떻게 할까? : &>
+
+- ls -l a.out b.out |& wc  # 에러의 갯수를 계산
+- history에 코멘트가 보임
+
+- \`cmd` : stdout으로 나와야 할 결과가 string이 됨
+- HOME=\`pwd` : pwd 명령어로 나온 결과를 홈 디렉토리로 지정
+
+- touch aaaa bbbb cccc dddd : 파일 만들기
+- ls : aaaa  bbbb  cccc  dddd  hello.sh
+- FILES=\`ls`
+- echo $FILES : aaaa  bbbb  cccc  dddd  hello.sh
+
+- ( cd /tmp; ps ) : bash 하나 더 띄워짐
+- && : 앞에 게 true면 뒤에 거 실행, 앞에 게 false면 뒤에 거 실행하지 않음
+- || : 앞에 게 true면 뒤에 거 실행하지 않고, 앞에 게 false면 뒤에 거 실행함
+- ; : 앞에 게 true든 false든 뒤에 거 실행
+
+- \{ ls ; ps ;} > result : ls와 ps 명령어의 결과를 동시에 둘 다 result에 저장하는 redirection 명령어 (brace 안에 세미콜론 주의)
+- cat result
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
