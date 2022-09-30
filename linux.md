@@ -405,7 +405,7 @@ echo "Hello $NAME!"
 echo 'Hello $NAME!'
 ```
 - esc
-- wq
+- :wq
 - source hello.sh : 파일 실행
 - bash hello.sh : bash 하나 더 띄워짐. sub shell에서 실행
 ```
@@ -420,8 +420,9 @@ Hello $NAME!
 - ctrl + D, exit, logout : EOF를 주는 방법
 - bash hello.sh : EOF를 만날 때까지 실행
 
+- #!/bin/bash : 샤-뱅, source나 bash로 실행할 경우 주석처리되지만, chmod로 실행할 경우 샤뱅 명령어가 실행됨
 - chmod 770 hello.sh
-- ./hello.sh
+- ./hello.sh : 파일 실행
 
 - 어떤 명령을 bg로 실행하고 싶은 경우, 명령어 다음에 뭘 넣을까? : &
 - stdout과 stderr 출력을 동시에 redirection해서 같은 파일에 넣고 싶은 경우 어떻게 할까? : &>
@@ -445,18 +446,110 @@ Hello $NAME!
 - \{ ls ; ps ;} > result : ls와 ps 명령어의 결과를 동시에 둘 다 result에 저장하는 redirection 명령어 (brace 안에 세미콜론 주의)
 - cat result
 
+- $? : 이전 명령의 exit status
 
+- echo $(( 100+200 )) : 300, integer만 계산 가능
+- 우분투 시스템에서는 실행 함수의 exit 변수가 0부터 255까지의 unsigned character임
 
+- A=\`a.out` : 99 입력하면 STDERR: Hello Jisu 99
+- echo $A 하면 무엇이 나올까? : STDOUT: Hello Jisu 99
 
+- bash 함수의 리턴값은 이 프로그램이 오류가 있게 끝났는지 정상적으로 끝났는지를 설명하는 데에만 쓰이지, 어떤 함수의 결과값을 설명하기 위해서 쓰이지 않음. bash 함수의 리턴값은 반드시 stdout으로 내보냄
 
+- $$ : 현재 쉘의 PID 출력
 
+- cp hello.sh args.sh
+- vi args.sh
+```
+#!/bin/bash
+NAME="Jisu"
+echo "Hello $NAME!"
+echo 'Hello $NAME!'
+echo "argc: " $# "0: " $0 "1: " $1 "2: " $2
+ps
+```
+- esc
+- :wq
+- source args.sh 100 200 300
+```
+Hello Jisu!
+Hello $NAME!
+argc:  3 0:  -bash 1:  100 2:  200
+    PID TTY          TIME CMD
+3327190 pts/0    00:00:00 bash
+3330964 pts/0    00:00:00 ps
+```
 
+- source args.sh "100 200 300" 이렇게 실행했을 때 결과는?
+```
+Hello Jisu!
+Hello $NAME!
+argc:  1 0:  -bash 1:  100 200 300 2:
+    PID TTY          TIME CMD
+3327190 pts/0    00:00:00 bash
+3331608 pts/0    00:00:00 ps
+```
 
+- echo $- : 쉘 설정값을 보여줌
 
+brace expansion
+- vi sum.sh
+- ex) 1부터 9999까지 홀수를 더하시오. 3의 배수를 더하시오.
+```
+#!/bin/bash
+sum=0
+for a in {1..100..1}
+do
+        sum=$sum+$a
+done
+echo $((sum))
+```
+- \{1..100..1} : 1(부터)..100(까지)..1(씩 건너띄기)
+- esc
+- :wq
+- source sum.sh : 5050
+- 1부터 백만까지라 하면 너무 길어서 안 끝남 : ctrl + C
+- 긴 문자열을 마지막에 숫자로 바꾸는 대신, 하나하나씩 더할 때 숫자로 바꿔야 함
+```
+#!/bin/bash
+sum=0
+for a in {1..100..1}
+do
+        sum=$(($sum+$a))
+done
+echo $((sum))
+```
+- 좀 시간 걸린 다음 끝남. 아까 건 안 끝남
 
+- echo \{0..100} : 0부터 100까지 출력됨
+- touch \{0..100} : 파일 100개 만들기
+- rm * : 모두 지우기
 
+- echo \{00000..99..2}
+- \{00000..99..2} : 00000(원하는 자릿수)..99(까지)..2(스텝)
 
+- echo file_\{0000..999..1}.c : 파일을 바로 만들지 않고 echo 해보기
+- touch file_\{0000..999..1}.c : 파일 1000개 만들기
 
+- compgen -A variable : 변수들이 다 나옴
 
+- read LINE
+- aaa
+- echo $LINE : aaa
 
+globing
+- echo *
+- echo file_09* : file_09로 시작하는 파일 모두 출력
+- echo ???? : 네 글자로 된 파일 모두 찾기
+- echo * : .으로 시작하는 파일은 안 나옴
+- echo .* : 이렇게 하면 되긴 함
 
+- shopt -s dotglob : shell setting option
+- echo * : .으로 시작하는 파일도 나옴
+
+- A=zzz*
+- echo $A : zzz*
+- shopt -s nullglob : 에러 안 나오게 하기
+- A=zzz*
+- echo $A : 
+- shopt -u nullglob : 옵션 끄기
