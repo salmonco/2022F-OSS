@@ -553,3 +553,58 @@ globing
 - A=zzz*
 - echo $A : 
 - shopt -u nullglob : 옵션 끄기
+
+### 2022/10/06
+
+- A=300 : A라는 변수에 300이라는 스트링 넣기
+- echo $A : 300
+- bash : 새로 bash 열기
+- echo $A : (안 나옴)
+- exit : 새로 연 bash에서 나가기
+- export A
+- bash
+- echo $A : 300
+- A=999
+- echo $A : 999
+- exit
+- echo $A : 300 : sub shell에 가도 그 변수에 있는 값은 바뀌지 않음
+- export는 sub shell로 export 되지, 부모로 export 되지는 않음
+
+- tr "\t" "#" : tap을 #로 바꾸기
+
+- echo \{A..Z}
+- echo \{000..99}
+
+- echo \{A..z} : Z와 a 사이에 특수문자도 같이 출력됨
+- echo \{\{A..Z},\{a..z}} : 이렇게 하면 됨
+
+- echo \{a..c}\{00..09} : a00 a01 ... a09 ... b00 ... c00 ... c09
+
+- $\{FOO:0:3} : substring (position, length)
+- $\{FOO:(-5):3} : substring from the right, 괄호 중요
+
+- echo $\{STR/%.c/.java} : suffix .c를 .java로 바꿔서 출력
+- echo mv $STR $\{STR/%.c/.java} : suffix .c를 .java로 파일명 바꾸기
+
+- echo $\{#STR} : 글자수
+
+- A=""
+- echo $\{A:-999} : 999, A가 unset이거나 null이면 값 출력
+
+- A=111
+- echo $\{A:-999} : 111
+
+- A=""
+- echo $\{A:=999} : 999, A가 unset이거나 null이면 값을 넣음
+- echo $A : 999
+
+- touch file_\{0000..9999}.c : 파일 만 개 만들기
+- 300부터 399까지의 c 파일을 모두 java 파일로 바꾸세요.
+- echo file_3*.c : globing으로 파일 찾아내기
+- echo file_\{300..399}.c : brace로 파일 찾아내기
+- for FN in file_3*.c
+- > do 
+- > echo $FN $\{FN%.c}.java
+- for FN in file_3*.c; do mv $FN $\{FN%.c}.java
+
+- group으로 실행할 땐 오른쪽 brace 앞에 세미콜론이 있어야 함
