@@ -608,3 +608,84 @@ globing
 - for FN in file_3*.c; do mv $FN $\{FN%.c}.java
 
 - group으로 실행할 땐 오른쪽 brace 앞에 세미콜론이 있어야 함
+
+- (cd /tmp; ps) : sub shell이 실행됨. bash가 2개 나옴
+- (cd /tmp; ps) | grep bash | wc -l : 2
+
+- \{ cd /tmp; ps ;} : bash 하나 뜸
+- \{ cd /tmp; ps ;} | grep bash | wc -l : 2
+- pipe는 sub shell에서 실행됨
+
+- sleep 1; sleee 2; sleep 3 : 앞에 명령에서 에러가 나도 뒤에 게 실행됨
+
+함수
+```
+#!/bin/bash
+function fn()
+{
+        echo "Jisu Bong"
+        echo "cmd:" $0 "num:" $# "Arg1:" $1 "Arg2:" $2 "Arg3:" $3
+}
+
+function fadd()
+{
+        echo $(($1+$2))
+        return $(($#-2))
+}
+```
+- source fn.sh
+- fn
+- fn 100 200 300
+- source fn.sh
+- fadd 200 300 : 500
+- echo $? : 0, 리턴값 출력
+
+- declare -F : 정의되어있는 함수 보기
+- declare -f fadd : 이 함수가 어떻게 정의되어있는지 보여줌
+
+-  printf "%d + %d = %d\n" 100 200 $((100+200))
+-  printf "%f + %f = %f\n" 100 200 \`fadd 100 200`
+
+- ls -l 한 결과도 보고 싶고 lsresult에도 저장하고 싶은 경우
+- ls -l > lsresult : 이거는 결과 안 보고 lsresult에 저장
+- ls -l | tee lsresult : 결과 보고 lsresult에 저장
+
+- ls | wc -l : 19가 나왔다.
+- ls -a | wc -l : 최소 2개가 늘어난다.
+
+- ls -a > lsresult
+- wc lsresult : 존재하는 파일에 덮어씀
+
+- ls -a > lsresult999
+- wc lsresult999 : ls -a의 wc에서 1 늘어남
+
+- redirect 파일명 하면 명령어가 실행되는 순간 파일이 만들어짐
+
+- which ls : /bin/ls
+- ls -l \`which ls`
+
+조건문
+- if \[\[ condition ]]; then : bracket 양옆 반드시 띄어야 함
+- elif ; then
+- else ; then
+- fi
+
+- a.out <<<9999
+- echo $? : 15
+- echo $(( 9999%256 )) : 15
+
+- if ./a.out
+- > then
+- > echo true
+- > else
+- > echo false
+- > fi
+- 100
+
+- if ./a.out; then echo true; else echo false; fi
+
+- if \[\[ -z $NAME ]] : NAME이 비어있으면
+- > then
+- > echo EMPTY
+- > fi
+
