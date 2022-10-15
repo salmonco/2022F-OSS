@@ -689,3 +689,72 @@ function fadd()
 - > echo EMPTY
 - > fi
 
+### 2022/10/13
+
+- brace나 꺽쇠는 그 자체로 명령어이기 때문에 띄어써야 함
+
+- \[\[ AAA == A* ]]
+- echo $? : 0
+
+*문제.*
+- touch aaa aaaa aaaaa bbb bbbb bbaa
+- ls : aaa  aaaa  aaaaa  bbaa  bbb  bbbb
+- echo * 했을 때 결과를 쓰세요. : aaa aaaa aaaaa bbaa bbb bbbb
+
+*문제.*
+- touch .aa ..aaaaa ...aaaa
+- echo * 했을 때 결과를 쓰세요. : aaa aaaa aaaaa bbaa bbb bbbb
+
+*문제.*
+- shopt -s dotglob
+- echo * 했을 때 결과를 쓰세요. : .aa aaa ...aaaa aaaa ..aaaaa aaaaa bbaa bbb bbbb
+
+- if \[\[ -z $A ]] ; then echo T ; else echo F ; fi : A 변수에 값이 비어있으면 T 출력하고 아니면 F 출력
+
+*문제. 뭐하는 명령어인가?*
+- echo aaa > aaa : aaa라는 문자열을 stdout으로 내는데 redirection해서 aaa라는 파일에 이 문자열을 집어넣는다.
+
+*문제. 뭐하는 명령어인가?*
+- echo bbb > aaa : aaa라는 파일을 지우고 다시 만들어서 bbb라는 문자열을 집어넣는다.
+- 지우고 다시 만드는 건 덮어쓰기, clobbing이라 함
+
+- set -o noclobber : 덮어쓰기 안 되게 설정
+- set +o noclobber : 다시 덮어쓰기 되도록 설정
+
+*문제. 1에서 1000까지 7의 배수를 더하세요.*
+
+- for ((i=0 ; i<10 ; i++)); do echo $i; done
+- for ((i=0 ; i<10 ; i++)); do sum=$(($i+$sum)); done
+
+- A=`ls`랑 A=$(ls)는 같음
+- A=(`ls`) : 배열 만들기
+
+- !! : 가장 최근에 했던 명령어
+
+*문제. oss000 유저한테 가세요.*
+- cd ~oss000
+
+- ls -l 202020722
+- ^22^21 : 22를 21로 바꾸기, ls -l 202020721 가 실행됨
+
+- history
+- !2063 : 2063번 명령어 실행하기
+- !2079:gs/a/b : 2079번 명령어에서 a문자를 모두 b로 바꿔서 실행
+- history | grep if
+- history | grep "if "
+
+- !$ : 최근에 했던 명령어의 parameter
+- touch hello.c
+- cat !$ : cat hello.c
+
+- alias mv=\'mv -i' : 명령어 별칭 설정
+
+*문제. 따옴표 하나랑 따옴표 두 개의 차이는?*
+- 따옴표 하나 : no expansion
+
+- date : 2022. 10. 15. (토) 18:07:55 KST
+- locale
+- LC_TIME="en_US.UTF-8"
+- date : Sat 15 Oct 2022 06:08:20 PM KST
+
+
