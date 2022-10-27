@@ -1,6 +1,6 @@
 # FOSS-lab
 
-202126879 봉지수
+## 202126879 봉지수
 
 ## Getting started
 
