@@ -757,4 +757,39 @@ function fadd()
 - LC_TIME="en_US.UTF-8"
 - date : Sat 15 Oct 2022 06:08:20 PM KST
 
+### 2022/10/27
+
+Open Source Software 운동
+- GNU (GNU is Not Unix)
+- FSF (Free Software Foundation)
+- 상업성 반대, 무료로 공개해야 한다.
+
+유닉스 계열의 운영 체제
+- Unix : AT&T 연구소에 등록된 상표다.
+- Minix
+- Mac OS
+- Sun OS
+- Solaris
+
+대표적인 오픈 소스로 BSD, Linux가 있다.
+- BSD (Berkeley Software Distribution) : 오픈된 유닉스 5, 6 버전에서 분기되어 만들어짐
+- Linux
+
+- POSIX : IEEE에서 리눅스나 api의 명령을 정의해놓은 표준
+
+- Open Source Software 상업성 공존 인정
+
+지식재산권
+- 특허
+- copyright : 창작물에 (c) 년월 이름 선언하는 것만으로 권리를 가짐. 사후 50년까지 저작권 인정받음
+- copyleft : (c가 왼쪽에 구멍이 뚫려있음). 다른 사람한테 권리 주기. 공유
+- creative commons : (cc). 끝에 저작권자 명시
+- public domain : (c)에 금지 표시. ex) 법률, 헌법
+
+- 라이센스
+
+
+
+
+
 
