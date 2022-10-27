@@ -1,5 +1,8 @@
 # FOSS-lab
 
+봉지수
+PC에서 메모장으로 수정
+
 ## 202126879 봉지수
 
 ## Getting started
