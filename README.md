@@ -94,9 +94,9 @@ For open source projects, say how it is licensed.
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
 
 ## Memo
-1. 어떨 때 branch, fork, merge 하는지?
+1. 어떨 때 branch 만들고, 어떨 때 fork 하는지?
 -> 원래 있던 프로젝트를 다른 유형의 프로젝트로 개발할 때 fork해서 프로젝트 하나를 새로운 프로젝트로 분기한다.
-일반적으로 버그를 수정하려고 fork하진 않는다. 이 경우 bug fix branch를 하나 만든다.
+일반적으로 버그를 수정하려고 fork하진 않는다. 이 경우 bug fix branch를 하나 만든다. merge하는 것은 비슷하지만 규모에서 차이가 있다.
 2. 내가 만든 오픈소스를 MIT 라이센스로 공개했다. 여기서 내 저작권을 주장하는 것은 나쁜 짓이다. (x)
 3. git init 하세요. branch 하나 만드시오. readme.md 파일에 학번을 넣으세요. 이 파일을 staged에 넣으세요. commit 하세요.
 4. git log 한 결과가 다음과 같다. 어떤 상태로 돌리세요. -> git reset --hard \[SHA]
@@ -109,3 +109,4 @@ sid 파일의 맨 끝 부분에 자기 이름을 추가하세요: echo Jisu Bong
 sid 파일을 커밋하세요: git add sid; git commit -m "final_exam"  
 origin에 있는 HEAD를 현재 리포지토리에 있는 HEAD와 동일하게 만드세요: git push
 7. 오픈소스의 기본 권리: 사용, 복제, 수정, 배포
+
