@@ -98,3 +98,6 @@ If you have run out of energy or time for your project, put a note at the top of
 -> 원래 있던 프로젝트를 다른 유형의 프로젝트로 개발할 때 fork해서 프로젝트 하나를 새로운 프로젝트로 분기한다.
 일반적으로 버그를 수정하려고 fork하진 않는다. 이 경우 bug fix branch를 하나 만든다.
 2. 내가 만든 오픈소스를 MIT 라이센스로 공개했다. 여기서 내 저작권을 주장하는 것은 나쁜 짓이다. (x)
+3. git init 하세요. branch 하나 만드시오. readme.md 파일에 학번을 넣으세요. 이 파일을 staged에 넣으세요. commit 하세요.
+4. git log 한 결과가 다음과 같다. 어떤 상태로 돌리세요. -> git reset --hard \[SHA]
+5. ls -a 에서 a는 무슨 옵션인가? -> .으로 시작하는 파일을 보는 옵션이다.
