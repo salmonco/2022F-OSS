@@ -21,5 +21,8 @@ CCCCC br_2 14:19
 ```
 qqqq
 wwww
+<<<<<<< HEAD
 eeee
 rrrr
+=======
+>>>>>>> wwww
