@@ -101,3 +101,11 @@ If you have run out of energy or time for your project, put a note at the top of
 3. git init 하세요. branch 하나 만드시오. readme.md 파일에 학번을 넣으세요. 이 파일을 staged에 넣으세요. commit 하세요.
 4. git log 한 결과가 다음과 같다. 어떤 상태로 돌리세요. -> git reset --hard \[SHA]
 5. ls -a 에서 a는 무슨 옵션인가? -> .으로 시작하는 파일을 보는 옵션이다.
+6. 현재 디렉토리 이름을 final_exam라고 만드세요: mkdir final_exam  
+그 디렉토리로 이동하세요: cd final_exam  
+자기 학번을 sid란 파일로 저장하세요: echo 202126879 > sid  
+이 디렉토리의 git 리포지토리를 만드세요: git init  
+sid 파일의 맨 끝 부분에 자기 이름을 추가하세요: echo Jisu Bong >> sid  
+sid 파일을 커밋하세요: git add sid; git commit -m "final_exam"  
+origin에 있는 HEAD를 현재 리포지토리에 있는 HEAD와 동일하게 만드세요: git push
+7. 오픈소스의 기본 권리: 사용, 복제, 수정, 배포
