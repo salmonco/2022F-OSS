@@ -122,7 +122,28 @@ origin에 있는 HEAD를 현재 리포지토리에 있는 HEAD와 동일하게 �
 
 ### software business
 
+7 Canvas
+- Value Propositions: 고객에게 제공하고 싶은 가치가 뭔지
+- Key Partners: 우리 서비스를 영위하는 데 의존하는 파트너가 누군지 
+- Key Activities
+- Key Resources
+- Customer Segments: 우리가 대상으로 하는 고객을 정하기
+- Customer Relationships
+- Channels
 
+KPI
+
+BSC (Balanced Score Card)
+- Financial
+- Customer
+- Internal Processes
+- Organizational Capacity
+
+전략체계 균형 맞추기
+- 매출과 수익
+- 단기와 장기
+- 재무적인 것과 비재무적인 것(고객의 만족 등)
+- ...
 
 
 
