@@ -94,19 +94,37 @@ For open source projects, say how it is licensed.
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
 
 ## Memo
+
+### linux command
+1. ls -a 에서 a는 무슨 옵션인가? -> .으로 시작하는 파일을 보는 옵션이다.
+
+### license
+1. 내가 만든 오픈소스를 MIT 라이센스로 공개했다. 여기서 내 저작권을 주장하는 것은 나쁜 짓이다. (x)
+2. 오픈소스의 기본 권리: 사용, 복제, 수정, 배포  
+사용권 - 기간제한, 사람제한, 조직제한 등등이 있음  
+복제권 - 내가 사용하는 목적으로 백업받는 건 괜찮은데 다른 사람한테 파는 건 불법임  
+수정할 권리 - 소스가 공개되었을 때만(오픈소스일 때만) 수정할 권리가 생김  
+배포할 권리 - 문제될 상황이 생길 수 있으니 잘 보기 
+
+### git
 1. 어떨 때 branch 만들고, 어떨 때 fork 하는지?
 -> 원래 있던 프로젝트를 다른 유형의 프로젝트로 개발할 때 fork해서 프로젝트 하나를 새로운 프로젝트로 분기한다.
 일반적으로 버그를 수정하려고 fork하진 않는다. 이 경우 bug fix branch를 하나 만든다. merge하는 것은 비슷하지만 규모에서 차이가 있다.
-2. 내가 만든 오픈소스를 MIT 라이센스로 공개했다. 여기서 내 저작권을 주장하는 것은 나쁜 짓이다. (x)
-3. git init 하세요. branch 하나 만드시오. readme.md 파일에 학번을 넣으세요. 이 파일을 staged에 넣으세요. commit 하세요.
-4. git log 한 결과가 다음과 같다. 어떤 상태로 돌리세요. -> git reset --hard \[SHA]
-5. ls -a 에서 a는 무슨 옵션인가? -> .으로 시작하는 파일을 보는 옵션이다.
-6. 현재 디렉토리 이름을 final_exam라고 만드세요: mkdir final_exam  
+2. git init 하세요. branch 하나 만드시오. readme.md 파일에 학번을 넣으세요. 이 파일을 staged에 넣으세요. commit 하세요.
+3. git log 한 결과가 다음과 같다. 어떤 상태로 돌리세요. -> git reset --hard \[SHA]
+4. 현재 디렉토리 이름을 final_exam라고 만드세요: mkdir final_exam  
 그 디렉토리로 이동하세요: cd final_exam  
 자기 학번을 sid란 파일로 저장하세요: echo 202126879 > sid  
 이 디렉토리의 git 리포지토리를 만드세요: git init  
 sid 파일의 맨 끝 부분에 자기 이름을 추가하세요: echo Jisu Bong >> sid  
 sid 파일을 커밋하세요: git add sid; git commit -m "final_exam"  
 origin에 있는 HEAD를 현재 리포지토리에 있는 HEAD와 동일하게 만드세요: git push
-7. 오픈소스의 기본 권리: 사용, 복제, 수정, 배포
+
+### software business
+
+
+
+
+
+
 
