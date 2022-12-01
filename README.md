@@ -148,7 +148,7 @@ BSC (Balanced Score Card)
 - 재무적인 것과 비재무적인 것(고객의 만족 등)
 - ...
 
-
+Gartner's Hype Cycle for Emerging Technologies
 
 
 
