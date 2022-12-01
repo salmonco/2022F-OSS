@@ -131,7 +131,10 @@ origin에 있는 HEAD를 현재 리포지토리에 있는 HEAD와 동일하게 �
 - Customer Relationships
 - Channels
 
-KPI
+KPI: 전략 목표들이 어떻게 수행되어야 하는가
+- 도전적이여야 함. ex) 토익 730 -> 850 달성하기
+- 가능해야 함
+- 전 조직원이 합의해야 함
 
 BSC (Balanced Score Card)
 - Financial
