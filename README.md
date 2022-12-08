@@ -148,7 +148,31 @@ BSC (Balanced Score Card)
 - 재무적인 것과 비재무적인 것(고객의 만족 등)
 - ...
 
-Gartner's Hype Cycle for Emerging Technologies
+Gartner's Hype Cycle for Emerging Technologies - 뜨는 기술에 대한 사이클  
+급격히 증가(innovation trigger) / 피크 / 급격히 감소 / 서서히 증가  
+제일 오른쪽 쯤 되는 것은 다 쓸 수 있는 기술  
+피크: Consumer 3D printing  
+쓰고 있음: Enterprise 3D printing  
+
+1. slope of enlightenment에서 일어나는 일은? -> 표준화, 수많은 오픈소스 프로젝트들이 출시됨
+2. 표준화는 어느 시점에서 일어나는 게 합리적인가? -> slope of enlightenment
+
+software business - 주로 3가지 방식으로 서비스함
+- Software package
+- System integration
+- SaaS
+
+service business model - 서비스를 어떤 수준으로 받을 것인가
+- Turn-key based: 제일 높은 수준. 외부에서 완제품을 가져옴
+- Outsourcing
+- Manpower dispatch(인력 파견): 제일 낮은 수준
+- Partnership
+
+구현하는 비용보다 테스트하는 비용이 두 배 더 높음
+
+
+
+
 
 
 
