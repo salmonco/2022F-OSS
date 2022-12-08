@@ -104,7 +104,8 @@ If you have run out of energy or time for your project, put a note at the top of
 사용권 - 기간제한, 사람제한, 조직제한 등등이 있음  
 복제권 - 내가 사용하는 목적으로 백업받는 건 괜찮은데 다른 사람한테 파는 건 불법임  
 수정할 권리 - 소스가 공개되었을 때만(오픈소스일 때만) 수정할 권리가 생김  
-배포할 권리 - 문제될 상황이 생길 수 있으니 잘 보기 
+배포할 권리 - 문제될 상황이 생길 수 있으니 잘 보기  
+*보증의 부정: 보증을 부인할 수 있는 권리가 있음. 내 오픈소스 갖고 다른 사람이 썼는데 다른 사람한테 문제가 생겼으면 나는 책임이 없음
 
 ### git
 1. 어떨 때 branch 만들고, 어떨 때 fork 하는지?
@@ -168,11 +169,33 @@ service business model - 서비스를 어떤 수준으로 받을 것인가
 - Manpower dispatch(인력 파견): 제일 낮은 수준
 - Partnership
 
-구현하는 비용보다 테스트하는 비용이 두 배 더 높음
+구현하는 비용보다 테스트하는 비용이 두 배 더 높음  
+테스트와 maintenance에 너무 많은 비용이 듦  
+오픈소스로 비용 절감 가능
 
+3. 내부 테스트 -> 알파 테스트 / 외부 테스트 -> 베타 테스트
+4. 소스코드 닫아두고 테스트 -> black box test / 소스코드 열어두고 테스트 -> white box test
 
+5. 특허이슈 발생 시 공개SW 개발자에게 특허책임을 물을 수 없음
 
+*오픈소스로 돈 버는 방법*  
+코드를 파는 게 아니라, 다른 것들을 팔 수 있음  
+- 서비스 - 교육, 훈련, 기술지원, 자문
+- 실행 파일, DVD, Packaging
+- Branded merchandise. ex)깃랩 스티커, 슬랙 티셔츠
+- Software as a services - Software + services
+- Voluntary donations
+- Crowdsourcing
 
+Selling users - 커뮤니티에 가입된 유저들을 통해 수익을 얻음. ex) 광고수익  
+Pre-selling code. ex) 오픈소스로 이거 만든 사람에게 보상  
+Selling intellectual property  
+Selling proprietary additives
 
+obfuscation of source code: 소스코드를 해석하지 못하게 함. 자유로운 수정 불가능하기 때문  
+delayed open-sourcing: 다음부터는 유료화
 
+Funding
 
+6. 오픈소스로 돈 벌 수 있는 방법이 아닌 것을 모두 고르시오.  
+소스코드를 고쳐서 파는 사람한테는 추가적으로 비용을 받는다. (x)
